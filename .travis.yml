@@ -1,7 +1,2 @@
 language: c
 compiler: gcc
-
-make
-
-script: 
-	bash test.sh
