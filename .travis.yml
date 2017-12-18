@@ -1,4 +1,7 @@
-language: bash
+language: c
+compiler: gcc
+
+make
 
 script: 
 	bash test.sh
