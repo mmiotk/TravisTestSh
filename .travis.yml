@@ -1,2 +1,2 @@
 language: c
-script: bash test.sh
+script: bash https://inf.ug.edu.pl/~mmiotk/Scripts/test.sh
