@@ -1,2 +1,7 @@
-language: c
-script: bash https://inf.ug.edu.pl/~mmiotk/Scripts/test.sh
+language: bash 
+before_script:
+    - curl -L "http://downloads.sourceforge.net/shunit2/shunit2-2.0.3.tgz" | tar zx
+
+script:
+    - bash test_test.sh
+
