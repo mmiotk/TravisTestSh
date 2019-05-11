@@ -5,10 +5,12 @@ before_script:
 
 addons:
   chrome: stable
-  firefox: stable
+before_install:
+  - # start your web application and listen on `localhost`
+  - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
 
 language: java 
 
 script:
-    - mvn -B test
+    - mvn -q test
 
