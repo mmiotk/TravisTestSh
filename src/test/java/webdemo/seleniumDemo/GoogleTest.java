@@ -2,17 +2,16 @@ package webdemo.seleniumDemo;
 
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
 
 public class GoogleTest {
 	
@@ -20,15 +19,15 @@ public class GoogleTest {
 
 	@BeforeAll
 	public static void setUpDriver(){
-		System.setProperty("webdriver.gecko.driver", "resources/geckodriver");
-		driver = new FirefoxDriver();
+		System.setProperty("webdriver.chrome.driver", "resources/chromedriver");
+		driver = new ChromeDriver();
 		// Implicity wait -> max czas na znalezienie elementu na stronie
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
 
 	@BeforeEach
 	public void setUp() throws Exception {
-		driver.get("https://duckduckgo.com/");
+		driver.get("https://google.pl/");
 	}
 
 	@AfterAll
@@ -38,20 +37,7 @@ public class GoogleTest {
 
 	@Test
 	public void testTitlePage() {
-    	assertEquals("DuckDuckGo — Privacy, simplified.", driver.getTitle());
-	}
-
-	@Test
-	public void testSource(){
-		String source = driver.getPageSource();
-		assertTrue(source.contains("DuckDuckGo"));
-	}
-	
-	@Test
-	public void testClick(){
-		driver.findElement(By.id("search_form_input_homepage")).sendKeys("Mateusz Miotk");
-		driver.findElement(By.id("search_button_homepage")).click();
-		assertEquals("Mateusz Miotk at DuckDuckGo", driver.getTitle());
+    	assertEquals("Google", driver.getTitle());
 	}
 
 }
