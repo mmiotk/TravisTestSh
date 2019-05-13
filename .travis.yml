@@ -1,7 +1,5 @@
 dist:
-  - xenial
-services:
-  - xvfb
+  - trusty
 
 before_script:
   - "export DISPLAY=:99.0"
