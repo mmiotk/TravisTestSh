@@ -4,16 +4,16 @@ before_script:
   - sleep 3
 
 addons:
-  chrome: "71.0"
+  chrome: stable
 before_install:
   - # start your web application and listen on `localhost`
-  - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
+  - #google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
 
 language: java 
 
-cache:
-  directories:
-  - $HOME/.m2
+#cache:
+#  directories:
+#  - $HOME/.m2
 
 script:
     - mvn test
