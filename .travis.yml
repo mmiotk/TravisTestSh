@@ -4,8 +4,7 @@ before_script:
   - sleep 3
 
 addons:
-  chrome: stable
-  firefox: "66.04"
+  chrome: "71.0"
 before_install:
   - # start your web application and listen on `localhost`
   - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
@@ -17,5 +16,5 @@ cache:
   - $HOME/.m2
 
 script:
-    - mvn -q test
+    - mvn test
 
