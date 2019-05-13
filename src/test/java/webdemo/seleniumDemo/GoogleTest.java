@@ -19,7 +19,7 @@ public class GoogleTest {
 
 	@BeforeAll
 	public static void setUpDriver(){
-		//System.setProperty("webdriver.chrome.driver", "resources/chromedriver");
+		System.setProperty("webdriver.chrome.driver", "resources/chromedriver");
 		driver = new ChromeDriver();
 		// Implicity wait -> max czas na znalezienie elementu na stronie
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
